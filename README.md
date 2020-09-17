@@ -8,6 +8,7 @@ Based on this tool : <b>Aircrack-ng: </b> <a href="https://www.aircrack-ng.org/"
 
 I Understand Enslish words:
 Reimplementing Aircrack-ng in python only for didadic purpose.
+
 The script follow the steps bellow:
   1. Sniff a WLAN to obtain a Handshake, similar to airodump-ng.
   2. Decode the packet to obtain MIC and information about the 802.x Auth protocol
@@ -16,6 +17,7 @@ The script follow the steps bellow:
 
 Senão:
 Reimplementando o Aircrack-ng para complementar os estudos.
+
 O Script segue os passo abaixo:
   1. Procura em um arquivo .pcap ou escuta na rede por um handshake (Similar ao Airodump-ng)
   2. Enocntra as informações necessárias realizando um decode nos pacotes
