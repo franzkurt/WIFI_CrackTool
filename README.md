@@ -1,14 +1,12 @@
-<h2 align="center"> Script to Crack WPA2 math Keys</h2> 
+<h2 align="center"> Explaining wpacrack.py tool</h2> 
 <p align="center">
   <img src="https://img.shields.io/badge/python%20-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white"/>
 </p>
-<ul>
-  <li><b>Aircrack-ng: </b> <a href="https://www.aircrack-ng.org/" target="_blank">https://www.aircrack-ng.org/</a></li>
-</ul>
-# repository wpacrack
 
-Reimplementing Aircrack-ng for didadic purpose.
-Reimplementando o Aircrack-ng para estudos.
+Based on this tool : <b>Aircrack-ng: </b> <a href="https://www.aircrack-ng.org/" target="_blank">https://www.aircrack-ng.org/</a>
+
+Reimplementing Aircrack-ng in python only for didadic purpose.
+Reimplementando o Aircrack-ng para complementar os estudos.
 
 The script follow the steps bellow:
   1. Sniff a WLAN to obtain a Handshake, similar to airodump-ng.
@@ -25,11 +23,11 @@ O Script segue os passo abaixo:
 To run the script:
 install dependencies:
 
-  sudo pip install scapy hmac binascii ..
+ <code> sudo pip install scapy hmac binascii ..</code>
   
 Run the script
    
-  sudo python wpacrack.py
+  <code> sudo python wpacrack.py</code>
   
  
 Link to file desciption of 802.x Auth stored at IPFS Gateway.
