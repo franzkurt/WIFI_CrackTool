@@ -7,7 +7,7 @@ Based on this tool : <b>Aircrack-ng: </b> <a href="https://www.aircrack-ng.org/"
 
 [Doc WPA2 - Authentication](https://gateway.pinata.cloud/ipfs/QmZwXohZ8yai8gwSjx2NLbfBCLKbbUGXTLehGrzSezdJqv)
 
-I Understand Enslish words:
+1.I Understand Enslish words:
 Reimplementing Aircrack-ng in python only for didadic purpose.
 
 The script follow the steps bellow:
@@ -16,7 +16,8 @@ The script follow the steps bellow:
   3. Generate with HMAC-SHA1 the possible values to PMK, PTK and compare with the original MIC.
   4. TO DO: Implement deauth packets to obtain a handshake in stealth mode
 
-Senão:
+
+1.Senão:
 Reimplementando o Aircrack-ng para complementar os estudos.
 
 O Script segue os passo abaixo:
@@ -25,12 +26,12 @@ O Script segue os passo abaixo:
   3. Gera através da função HMAC-SHA1 os possiveis valores de PMK, PTK e compara com o MIC obtido no handshake.
   4. FAZER: Implementar a desautenticação (similar ao airreplay-ng)
 
-To run the script:
+2. To run the script:
 install dependencies:
 
  <code> sudo pip install scapy hmac binascii </code>
   
-Run the script
+3. Run the script
    
   <code> sudo python wpacrack.py</code>
   
