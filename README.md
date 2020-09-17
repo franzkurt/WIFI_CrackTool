@@ -23,12 +23,13 @@ O Script segue os passo abaixo:
 To run the script:
 install dependencies:
 
- <code> sudo pip install scapy hmac binascii ..</code>
+ <code> sudo pip install scapy hmac binascii </code>
   
 Run the script
    
   <code> sudo python wpacrack.py</code>
   
+  ![alt text](https://gateway.pinata.cloud/ipfs/Qmbe28BBHHmcLRpSMkfqZAL5WnZV9tSNkvT7Lv6WsFnYpT)
  
 Link to file desciption of 802.x Auth stored at IPFS Gateway.
 
