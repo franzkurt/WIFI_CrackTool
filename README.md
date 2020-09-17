@@ -4,17 +4,18 @@
 </p>
 
 Based on this tool : <b>Aircrack-ng: </b> <a href="https://www.aircrack-ng.org/" target="_blank">https://www.aircrack-ng.org/</a>
+[Passo a Passo ](https://gateway.pinata.cloud/ipfs/QmZwXohZ8yai8gwSjx2NLbfBCLKbbUGXTLehGrzSezdJqv) Autenticação WPA2
 
+I Understand Enslish words:
 Reimplementing Aircrack-ng in python only for didadic purpose.
-
-Reimplementando o Aircrack-ng para complementar os estudos.
-
 The script follow the steps bellow:
   1. Sniff a WLAN to obtain a Handshake, similar to airodump-ng.
   2. Decode the packet to obtain MIC and information about the 802.x Auth protocol
   3. Generate with HMAC-SHA1 the possible values to PMK, PTK and compare with the original MIC.
   4. TO DO: Implement deauth packets to obtain a handshake in stealth mode
 
+Senão:
+Reimplementando o Aircrack-ng para complementar os estudos.
 O Script segue os passo abaixo:
   1. Procura em um arquivo .pcap ou escuta na rede por um handshake (Similar ao Airodump-ng)
   2. Enocntra as informações necessárias realizando um decode nos pacotes
@@ -32,8 +33,5 @@ Run the script
   
   ![alt text](https://gateway.pinata.cloud/ipfs/Qmbe28BBHHmcLRpSMkfqZAL5WnZV9tSNkvT7Lv6WsFnYpT)
  
-Link to file desciption of 802.x Auth stored at IPFS Gateway.
-
-[Passo a Passo ](https://gateway.pinata.cloud/ipfs/QmZwXohZ8yai8gwSjx2NLbfBCLKbbUGXTLehGrzSezdJqv) Autenticação WPA2
 
 Thx for reading.
