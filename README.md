@@ -6,7 +6,7 @@ Baseada na ferramenta de penetration test aircrack https://www.aircrack-ng.org/
   - IPFS [Doc WPA2 - Authentication](https://gateway.pinata.cloud/ipfs/QmZwXohZ8yai8gwSjx2NLbfBCLKbbUGXTLehGrzSezdJqv)
   - Diretório github: /documento.pdf
 
-## Fluxo:
+## Fluxo :bomb:
   1. Procura em um arquivo .pcap ou escuta na rede por um handshake (Similar ao Airodump-ng)
   2. Enocntra as informações necessárias realizando um decode nos pacotes
   3. Gera através da função HMAC-SHA1 os possiveis valores de PMK, PTK e compara com o MIC obtido no handshake.
