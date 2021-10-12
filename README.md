@@ -1,41 +1,38 @@
-<h2 align="center"> Explaining wpacrack.py tool</h2> 
-<p align="center">
-  <img src="https://img.shields.io/badge/python%20-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white"/>
-</p>
+## Crackeando a senha WPA2 de Redes WiFi com Scapy.py
+Baseada na ferramenta de penetration test aircrack https://www.aircrack-ng.org/
+:octocat:
+Documento explicando a construção da ferramenta para fins didáticos:
+  - IPFS [Doc WPA2 - Authentication](https://gateway.pinata.cloud/ipfs/QmZwXohZ8yai8gwSjx2NLbfBCLKbbUGXTLehGrzSezdJqv)
+  - Diretório github: /documento.pdf
 
-Based on this tool : <b>Aircrack-ng: </b> <a href="https://www.aircrack-ng.org/" target="_blank">https://www.aircrack-ng.org/</a>
-
-[Doc WPA2 - Authentication](https://gateway.pinata.cloud/ipfs/QmZwXohZ8yai8gwSjx2NLbfBCLKbbUGXTLehGrzSezdJqv)
-
-1.I Understand Enslish words:
-Reimplementing Aircrack-ng in python only for didadic purpose.
-
-The script follow the steps bellow:
-  1. Sniff a WLAN to obtain a Handshake, similar to airodump-ng.
-  2. Decode the packet to obtain MIC and information about the 802.x Auth protocol
-  3. Generate with HMAC-SHA1 the possible values to PMK, PTK and compare with the original MIC.
-  4. TO DO: Implement deauth packets to obtain a handshake in stealth mode
-
-
-1.Senão:
-Reimplementando o Aircrack-ng para complementar os estudos.
-
-O Script segue os passo abaixo:
+## Fluxo:
   1. Procura em um arquivo .pcap ou escuta na rede por um handshake (Similar ao Airodump-ng)
   2. Enocntra as informações necessárias realizando um decode nos pacotes
   3. Gera através da função HMAC-SHA1 os possiveis valores de PMK, PTK e compara com o MIC obtido no handshake.
-  4. FAZER: Implementar a desautenticação (similar ao airreplay-ng)
-
-2. To run the script:
-install dependencies:
-
- <code> sudo pip install scapy hmac binascii </code>
-  
-3. Run the script
-   
-  <code> sudo python wpacrack.py</code>
-  
-  ![alt text](https://gateway.pinata.cloud/ipfs/Qmbe28BBHHmcLRpSMkfqZAL5WnZV9tSNkvT7Lv6WsFnYpT)
  
+```
+git clone https://github.com/franzkurt/WIFI_CrackTool.git
+cd WIFI_CrackTool/
+pip install scapy hmac binascii
+python wpacrack.py (A interface de rede será resetada)
+```
+
+## Repositório
+```
+WiFi_CrackTool/
+├─ wordlists/
+│  ├─ rockyou.txt
+│  ├─ passwords.txt
+│  ├─ hashes.txt
+├─ src/
+   ├─ wpacrack.py
+
+```
+## TODO
+- [x] Criar um script que escute os pacotes na rede em modo promiscuo
+- [x] Filtrar apenas os pacotes de autenticação
+- [x] Descobrir a senha traffegada por meio de quebra de criptografia (Rainbow Tables)
+- [ ] Manipular pacotes em real-Time
+- [ ] Implementar a desautenticação (similar ao airreplay-ng)
 
 Thx for reading.
